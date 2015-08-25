@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xul-overlay href="chrome://browser/content/places/placesOverlay.xul"?>
+
+<!DOCTYPE dialog SYSTEM "chrome://rsstler/locale/rsstler.dtd">
+
+<dialog id="winMain" title="&subscribeFeed;" style="min-width:400px;"
+    onload="initSubscribe();"
+    buttons="extra1,cancel"
+    buttonlabelextra1="Subscribe"
+    ondialogextra1="acceptSubscribe();" 
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <script type="application/x-javascript" src="chrome://rsstler/content/rsstlerUtils.js"/>
+  <script type="application/x-javascript" src="chrome://rsstler/content/rsstlerSubscribe.js"/>
+  
+  <stringbundleset>
+    <stringbundle id="strRes" src="chrome://rsstler/locale/rsstler.properties"/>
+  </stringbundleset>
+  
+   <vbox flex="1">
+        <label value="&subscribeFeed.label;"/>
+        <textbox id="sfURL" />
+   </vbox>
+
+</dialog>

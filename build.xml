@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+
+<project name="rsstler" default="build">
+  
+  <property name="build.dir"      location="build"/>
+  <property name="src.dir"        location="src"/>
+  <property name="doc.dir"        location="Documentation"/>
+  
+  <target name="clean" description="Remove build output">
+    <delete dir="${build.dir}"/>
+  </target>
+  
+  <target name="assemble" description="Assemble extension structure">
+    <copy todir="${build.dir}/xpi">
+      <fileset dir="${src.dir}">
+        <include name="chrome/**"/>
+        <include name="defaults/**"/>
+        <include name="modules/*.jsm"/>
+        <include name="chrome.manifest"/>
+        <include name="install.rdf"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="doc" description="Create the documentation.">
+    <apply executable="python" dir="${doc.dir}" failonerror="true" verbose="true">
+      <arg value="Asciidoc/asciidoc.py"/>
+      <arg value="-b"/>
+      <arg value="html5"/>
+	  <arg value="--theme"/>
+      <arg value="volnitsky"/>
+      <arg value="-a"/>
+      <arg value="toc"/>
+      <arg value="-a"/>
+      <arg value="linkcss"/>
+      <arg value="-a"/>
+      <arg value="scriptsdir=chrome://rsstler/content"/>
+      <srcfile/>
+      <fileset dir="${doc.dir}">
+        <include name="*.doc"/>
+      </fileset>
+      <mapper type="glob" from="*.doc" to="*.html"/>
+    </apply>
+    <copy todir="${build.dir}\xpi\chrome\locale\en-US">
+      <fileset dir="${doc.dir}\Asciidoc\stylesheets">
+	<include name="asciidoc.css"/>
+      </fileset>
+    </copy>
+    <copy todir="${build.dir}\xpi\chrome\locale\en-US">
+      <fileset dir="${doc.dir}\Asciidoc\themes\volnitsky">
+	<include name="volnitsky.css"/>
+      </fileset>
+    </copy>
+    <copy todir="${build.dir}\xpi\chrome\content">
+      <fileset dir="${doc.dir}\Asciidoc\javascripts">
+	<include name="asciidoc.js"/>
+      </fileset>
+    </copy>
+    <copy todir="${build.dir}\xpi\chrome\locale\en-US">
+      <fileset dir="${doc.dir}">
+	<include name="*.png"/>
+	<include name="*.html"/>
+      </fileset>
+    </copy>
+    <copy todir="${build.dir}\xpi\chrome\locale\en-US">
+      <fileset dir="${doc.dir}\Asciidoc\images\icons">
+	<include name="warning.png"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="build" description="Build the Rsstler XPI file" depends="assemble,doc">
+    <zip destfile="${build.dir}/rsstler.xpi" basedir="${build.dir}/xpi" compress="true"/>
+  </target>
+
+  <target name="only-build" description="Build the Rsstler XPI file">
+    <zip destfile="${build.dir}/rsstler.xpi" basedir="${build.dir}/xpi" compress="true"/>
+  </target>
+
+</project>

@@ -1,0 +1,650 @@
+/* 
+ *  The base font size for Rsslter is 13pts; the reduced font size for buttons, etc. is 85%.
+ *
+ */
+html {
+height:100%; 
+max-height:100%; 
+padding:0; 
+margin:0; 
+border:0; 
+background:#fff; 
+font-family: arial, sans-serif;
+font-size: 13px;
+overflow: hidden; 
+}
+
+body {height:100%; max-height:100%; overflow:hidden; padding:0; margin:0; border:0;}
+
+/* First screen */
+#welcomeScreen {
+  background: rgb(243,243,243);
+}
+
+#logo {
+	opacity: 0.75;
+}
+
+/* Defines the main areas of the UI */
+
+#sidebarAll {
+	position:absolute;
+	/* border-right: 2px solid rgb(233,233,233); */	 
+	top:45px; 
+	bottom:0px; 
+	width:198px;
+	left: 0px;
+	background: white; 
+	z-index:4; 
+	overflow: hidden;
+}
+	
+#feedDisplayAll {
+	position:absolute;
+	padding-left: 4px;
+	padding-right: 4px;
+	top:45px; 
+	bottom:0px; 
+	right: 0px;
+	left: 200px;
+	background: white;
+	z-index:4; 
+	overflow: hidden;
+	/* overflow:auto; */
+	}
+		
+* html #sidebar, * html #feedDisplay {
+	height:100%; 
+	top:0; 
+	bottom:0; 
+	border-top:100px solid #fff; 
+	}
+	
+/*  Header Classes */
+#header {
+	position: absolute;
+	display: table;
+	overflow: hidden;
+	margin:0; 
+	top:0; 
+	left:0; 
+	width:100%; 
+	height:40px; 
+	background: #fff; 
+	z-index:5; 
+	color:#fff;}
+
+/* The box that holds the subscribe button centered over the sidebar */
+#subscription-box {
+	position: static;
+	display: table-cell;
+	vertical-align: middle;
+	top: 0px;
+	left: 0px;
+	width:200px;
+	text-align: center;
+}
+
+/* The SUBSCRIBE button is centered in the subscription-box */
+#subscriptionButton {
+	display: inline-block;
+	width: 100px;
+
+    background-color: rgb(209, 72, 54);
+	border-bottom-color: transparent;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-image-outset: 0 0 0 0;
+	border-image-repeat: stretch stretch;
+	border-image-slice: 100% 100% 100% 100%;
+	border-image-source: none;
+	border-image-width: 1 1 1 1;
+	border-left-color: transparent;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-color: transparent;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-color: transparent;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	border-top-style: solid;
+	border-top-width: 1px;
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+	padding-top: 6px;
+	padding-bottom: 8px;
+	font-family: arial, sans-serif;
+	font-size: 85%;
+	font-weight: 700;
+	outline-color: rgb(255, 255, 255);
+	outline-style: none;
+	outline-width: 0px;
+	text-align: center;
+	text-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px;
+	text-transform: uppercase;
+	white-space: nowrap;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	-moz-user-select: none;}
+	
+/* The box that holds all the header controls over the feedDisplay.  Should fill the rest of the table */
+#headerControls {
+	height: 40px;
+	left: 100px;
+	display: table-cell;
+   	vertical-align: middle;
+}
+
+.headerButton {
+ 	display: inline-block;
+	min-width: 60px;
+	height: 18px;
+	overflow: hidden;
+	margin-top: 5px;
+    padding-top: 6px;
+	padding-bottom: 6px;
+	padding-right: 6px;
+	padding-left: 6px;
+ 
+    background-color: rgb(245, 245, 245);
+	border-bottom-color: rgba(0, 0, 0, 0.1);
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-collapse: collapse;
+	border-image-outset: 0 0 0 0;
+	border-image-repeat: stretch stretch;
+	border-image-slice: 100% 100% 100% 100%;
+	border-image-source: none;
+	border-image-width: 1 1 1 1;
+	border-left-color: rgba(0, 0, 0, 0.1);
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-color: rgba(0, 0, 0, 0.1);
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-spacing: 0px 0px;
+	border-top-color: rgba(0, 0, 0, 0.1);
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	border-top-style: solid;
+	border-top-width: 1px;
+	color: rgb(100, 100, 100);
+	cursor: pointer;
+	font-family: arial, sans-serif;
+	font-size: 85%;
+	font-weight: 700;
+	outline-color: rgb(100, 100, 100);
+	outline-style: none;
+	outline-width: 0px;
+	text-align: center;
+	white-space: nowrap;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	-moz-user-select: none;}
+	
+.buttonImg {
+    border-collapse: collapse;
+	border-spacing: 0px 0px;
+	color: rgb(68, 68, 68);
+	cursor: default;
+	margin: auto;
+	opacity: 0.55;
+    white-space: nowrap;
+	cursor: pointer;
+	position: relative;
+	top: -2px;
+}
+
+.headerButton:hover {
+	-webkit-box-shadow:0 1px 1px rgba(0,0,0,.1);
+	box-shadow:0 1px 1px rgba(0,0,0,.1);
+	background-color:#f8f8f8;
+	border:1px solid #c6c6c6;
+	color:#333;
+}
+
+.buttonImg:hover {
+	opacity: 0.90;
+}
+
+/*  Specific buttons */
+
+#fullOrTitles[state=full] {
+    background-color: rgb(245, 245, 245);
+    color: rgb(68, 68, 68);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#fullOrTitles[state=titles] {
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1) inset;
+    background-color: rgb(238, 238, 238);
+    border: 1px solid rgb(204, 204, 204);
+    color: rgb(51, 51, 51);
+}
+
+#spinner {
+	display: none;
+}
+
+#spinner[visible] {
+	display: inline;
+	height: 32px;
+	width: 32px;
+	background-image: url("chrome://rsstler/skin/spinner.gif");
+	position: absolute;
+	top: 4px;
+	left: 6px;
+	opacity: 0.80 !important;
+}
+
+#imgRefresh {
+	margin: auto;
+	height: 21px;
+	width: 21px;
+	background-image: url("chrome://rsstler/skin/reload.png");
+}
+
+#imgSettings {
+	margin: auto;
+	height: 21px;
+	width: 21px;
+	background-image: url("chrome://rsstler/skin/gear2.png");
+}
+
+#imgFullOrTitles[state=full] {
+	margin: auto;
+	height: 21px;
+	width: 21px;
+    background-image: url("chrome://rsstler/skin/viewAsDetails3.png");
+}
+
+#imgFullOrTitles[state=titles] {
+	margin: auto;
+	height: 21px;
+	width: 21px;
+	background-image: url("chrome://rsstler/skin/viewAsList.png");
+}
+
+#openSettings {
+float: right;
+margin-right: 6px;
+}
+
+#openHelp {
+	float: right;
+	font-weight: 700;
+	font-size: 150%;
+	min-width: 20px;
+	margin-right: 6px;
+	line-height: 1;
+}
+
+
+/* 
+//  
+//  Sidebar (TreeView) Classes
+//
+//  The sidebar represents the feed folder hierarchy as lists <ul>.  The topmost level is
+//  the Rsstler feeds folder, so we hide that.
+//
+*/
+
+#sidebar {
+	position:absolute;
+	top:0px; 
+	bottom:0px; 
+	left: 0px;
+	right: 0px;
+	background: white; 
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+div#treeview  {
+	position: absolute;
+	bottom: 0px;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	margin-left: 3px;
+	padding-top: 3px;
+	padding-left: 3px;
+	overflow-x: hidden;
+    overflow-y: auto;
+}
+
+input#showUpdateStatus:checked ~ #sidebar {
+	top: 47px;
+}
+
+#updateStatus {
+	display: none;
+}
+
+input#showUpdateStatus:checked ~ #updateStatus {
+  position: absolute;
+  top: 2px;
+  left: 0px;
+  right: 0px;
+  background: #fff;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+  display: inline-block;
+  margin-left: 3px;
+  height: 31px;
+  line-height: 16px;
+  font-weight: 700;
+  overflow: hidden;
+}
+
+div#treeview ul, div#treeview li {
+	list-style-type: none;
+	cursor: pointer;
+	padding-left: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+}
+
+div#treeview>li.folder>div.folderAll {
+	display: none;
+}
+
+/* Indent itemStart, folderStart appropriately at each level */
+
+div#treeview li[unread] {
+	font-weight: 700;
+}
+
+div#treeview li[broken] {
+	color: red;
+}
+
+div#treeview>li>ul>li>.leafAll>.leafStart {
+	margin-left: 12px;
+}
+
+div#treeview>li>ul>li>.folderAll>.folderStart {
+	margin-left: 0px;
+}
+
+/* Second level */
+
+div#treeview>li>ul>li.folder>ul.folderList>li.leaf>.leafAll>.leafStart {
+	margin-left: 15px;
+	padding-left: 15px;
+}
+
+
+/*  Leaf is the entire <li> item for a leaf (feed) entry */
+.leaf {
+	display: block;
+	font-family: arial, sans-serif;
+	margin-bottom: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.leaf:hover, .folderAll:hover {
+	background-color: rgb(238, 238, 238);
+}
+
+/* itemTitle is the name portion of the feed title */
+.leafTitle, .folderTitle {
+	cursor: pointer;
+	display: inline;
+	max-width: none;
+	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	text-overflow: ellipsis;
+	font-weight: 400;
+}
+
+.leafTitle[unread], .folderTitle[unread] {
+font-weight: 700;
+}
+
+/* unreadCount is the count of unread items*/
+.leafUnreadCount {
+	color: rgb(102, 102, 102);
+	cursor: pointer;
+	display: inline;
+	font-size: 75%;
+}
+
+/* Hide the (0) unread count */
+.leafUnreadCount:not([unread]) {
+	display: none;
+}
+
+/*  These are always margin, padding zero so they stretch across the whole box for highlighting */
+.folderAll, .leafAll {
+	display: inline-block;
+	cursor: pointer;
+	margin-left: 0px;
+	padding-left: 0px;
+	margin-right: 0px;
+	right: 0px;
+	width: 100%;
+	white-space: nowrap;
+	padding-bottom: 8px;
+}
+
+/* folderIcon is the open/close indicator */
+.folderIconClosed {
+  width: 11px;
+  height: 16px;
+  display: inline-block;
+  background-image: url("chrome://rsstler/skin/rightArrow8.png");
+  background-repeat:no-repeat;
+  background-position: center left;
+}
+
+.folderIconOpen {
+  width: 11px;
+  height: 16px;
+  display: inline-block;
+  background-image: url("chrome://rsstler/skin/downArrow8.png");
+  background-repeat:no-repeat;
+  background-position: center left;
+}
+
+input#chkHideReadFeeds:checked ~ div li[read] {
+   display: none;
+}
+
+input#chkHideReadFeeds:checked ~ div ul li.folder > ul li[read]{
+   display: none;
+}
+
+input#chkHideEmptyFeeds:checked ~ div li[empty] {
+   display: none;
+}
+
+input#chkHideEmptyFeeds:checked ~ div ul li.folder > ul li[empty]{
+   display: none;
+}
+
+/* This begins the styling for the feedDisplay pane */
+
+/* Header pane at the top (no more?)*/
+#feedHeader {
+	border-collapse: collapse;
+	border-spacing: 0px 0px;
+	font-family: arial,sans-serif;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: 16px;
+	margin-top: 0px;
+	padding-bottom: 4px;
+	padding-left: 6.5px;
+	padding-right: 0px;
+	padding-top: 6.5px
+}
+
+/* This is the fixed header pane (off) */
+#feedDisplayHeader {
+  display: none;
+}
+
+input#useFixedDisplayHeader:checked ~ #feedDisplayHeader {
+  position: absolute;
+  top: 2px;
+  left: 0px;
+  right: 0px;
+  background: #fff;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  display: inline-block;
+  margin-right: 3px;
+  margin-left: 3px;
+  height: 31px;
+  overflow: hidden;
+}
+
+/* This is where the items are displayed */
+#feedDisplay {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+	padding: 3px;
+	overflow: auto;
+}
+
+input#useFixedDisplayHeader:checked ~ #feedDisplay {
+	top: 47px;
+}
+
+input#useFixedDisplayHeader:checked ~ #feedDisplay #feedHeader {
+	display: none;
+}
+
+#feedTitle {
+	font-weight: 700;
+}
+
+#feedLink {
+    color: black;
+    text-decoration: none;
+}
+
+#feedDesc {
+    font-size: 75%;
+}
+
+/* item is the outermost div of each feedItem */
+.item {
+	border-bottom-color: rgb(221, 221, 221);
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-collapse: collapse;
+	border-image-outset: 0 0 0 0;
+	border-image-repeat: stretch stretch;
+	border-image-slice: 100% 100% 100% 100%;
+	border-image-source: none;
+	border-image-width: 1 1 1 1;
+	border-left-color: rgb(221, 221, 221);
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-radius: 5px;
+	border-right-color: rgb(221, 221, 221);
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-spacing: 0px 0px;
+	border-top-color: rgb(221, 221, 221);
+	border-top-style: solid;
+	border-top-width: 1px;
+	box-shadow: rgb(227, 229, 235) 0px 0px 4px 0px;
+	padding-top: 6.5px;
+	padding-bottom:		6.5px;
+    padding-left: 13px;
+    padding-right: 13px;
+	margin-bottom: 6.5px;
+}
+
+.itemTitle {
+    border-collapse: collapse;
+	border-spacing: 0px 0px;
+	color: rgb(68, 68, 68);
+	font-family: arial, sans-serif;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	max-width: none;
+	visibility: visible;
+	font-weight: 700; 
+}
+
+/*  The following styles the items when "Show List Only" is selected */
+
+input#chkShowListOnly:checked ~ div.item div.itemAuthor {
+	display: none;
+}
+
+input#chkShowListOnly:checked ~ div.item iframe {
+	display: none;
+}
+
+/*  Hide an element when it is explicitly "marked" */
+div.item[markedItem=true] {
+	display: none;
+}
+
+/*  If the item is read, change the title to regular */ 
+.item[readItem=true] .itemTitle {
+	font-weight: 400;
+}
+
+.itemDesc {
+    padding-top: 1em;
+}
+
+/*  This is the iframe version of the description element */
+.iframeDesc {
+    padding-top: 1em;
+    border: none;
+    width: 100%;
+}
+
+.itemAuthor {
+	color: rgb(102, 102, 102);
+}
+.itemPubDate {
+	color: rgb(102, 102, 102);
+    float: right;
+}
+
+.itemEmptyNotice {
+    padding: 40px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 150%;
+}
+
+#itemTerminator {
+	background: rgb(243,243,243);
+	cursor: pointer;
+}
+
+/*  This needs to be big enough to fill up the feedDisplay.  Not sure how to achieve that other than a big number */
+.item#fillerSpace {
+	height: 6000px;
+	border: none;
+	box-shadow: none;
+}
+

@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+<title>Rsstler</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="chrome://rsstler/skin/rsstler.css" type="text/css">
+</head>
+<body>
+
+	<div id="header">
+		<div id="spinner" class="buttonImg"></div>
+		<div id="subscription-box">
+			<span id="subscriptionButton"
+				onClick="rsstlerUI.openSubscribeFeedDialog();">To be localized</span>
+		</div>
+		<div id="headerControls">
+			<div class="headerButton" id="viewer-refresh" title="Refresh"
+				 onClick="rsstlerUI.refreshAll();">
+				<div id="imgRefresh" class="buttonImg"></div>
+			</div>
+			<div class="headerButton" id="markAllAsRead"
+				title="Mark all as read"
+				onClick="rsstlerUI.markAllAsRead();">To be localized</div>
+		    <div class="headerButton" id="allOrUnread"
+		         title="Switch between showing all items or just the unread items."
+		         onClick="rsstlerUI.toggleAllOrUnread();">
+		    </div>
+		    <div class="headerButton" id="fullOrTitles"
+		    	 state="full"
+		         title="Switch between showing full items or just their titles."
+		         onClick="rsstlerUI.toggleFullOrTitles();">
+		       <div id="imgFullOrTitles" state="full" class="buttonImg"></div>
+		    </div>
+			<div class="headerButton" id="openHelp" title="Help"
+				onClick="rsstlerUI.openHelp();">To be localized</div>
+			<div class="headerButton" id="openSettings" title="Settings"
+				onClick="rsstlerUI.openSettingsDialog();">
+				<div id="imgSettings" class="buttonImg"></div>
+			</div>
+		</div>
+	</div>
+	<div id="main">
+		<div id="sidebarAll">
+			<input persist="true"
+				style="position: absolute; left: -9999px; top: -9999px;"
+				type="checkbox" id="showUpdateStatus" checked>
+			<div persist="true" class="item" id="updateStatus">Last update: Unknown</div>
+			<div id="sidebar">
+				<!--  These checkboxes are used by CSS to control the style of the treeview -->
+				<!--  They should not be on-screen, so move them off-screen. -->
+				<input persist="true"
+					style="position: absolute; left: -9999px; top: -9999px;"
+					type="checkbox" id="chkHideReadFeeds" checked> <input
+					persist="true"
+					style="position: absolute; left: -9999px; top: -9999px;"
+					type="checkbox" id="chkHideEmptyFeeds" checked>
+				<div id="treeview" class="item"></div>
+			</div>
+		</div>
+		<div id="feedDisplayAll" class="inner">
+			<input
+				persist="true"
+				style="position: absolute; left: -9999px; top: -9999px;"
+				type="checkbox" id="useFixedDisplayHeader" checked>
+			<div id="feedDisplayHeader" class="item" persist="true">
+			<span id="feedTitle" class="feedTitle">Rsstler</span>
+			</div>
+			<div id="feedDisplay">
+				<!--  These checkboxes are used by CSS to control the style of the feed items -->
+				<!--  They should not be on-screen, so move them off-screen. -->
+				<input persist="true"
+					style="position: absolute; left: -9999px; top: -9999px;"
+					type="checkbox" id="chkShowUnreadOnly" checked> 
+				<input
+					persist="true"
+					style="position: absolute; left: -9999px; top: -9999px;"
+					type="checkbox" id="chkShowListOnly" checked> 
+				<div class="item" id="welcomeScreen">
+					<br>
+					<center>
+						<img id="logo" src="chrome://rsstler/skin/logo1.png">
+					</center>
+					<br> <br>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<!--   <script type="application/x-javascript" src="chrome://rsstler/content/rsstlerUtils.js"></script>  -->
+<script type="application/x-javascript"
+	src="chrome://rsstler/content/rsstlerUtils.js" async></script>
+<script type="application/x-javascript"
+	src="chrome://rsstler/content/treeview.js" async></script>
+<script type="application/x-javascript"
+	src="chrome://rsstler/content/rsstlerUI.js" async></script>
+</html>

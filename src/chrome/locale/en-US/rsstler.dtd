@@ -1,0 +1,98 @@
+<!ENTITY rsstler.label        "Rsstler">
+<!ENTITY rsstler.tooltip        "Rustle up some good news!">
+<!ENTITY rsstler.toolbarLabel      "Rsstler">
+<!ENTITY rsstler.sidebarTitle      "Rsstler">
+<!ENTITY rsstler.deleteFeed.label        "Delete Feed">
+<!ENTITY rsstler.openInTab.label        "Open Feed Website">
+
+<!-- Subscribe Feed -->
+<!ENTITY subscribeFeed        "Subscribe to a Feed">
+<!ENTITY subscribeFeed.caption "Subscribe to a Feed">
+<!ENTITY subscribeFeed.label "Paste a feed URL below to subscribe:">
+
+<!-- Settings Dialog -->
+<!ENTITY settings.general.caption     "General">
+<!ENTITY settings.renderFeeds.label     "Render feeds in contents area">
+<!ENTITY settings.feedItemOrder.label     "Feed item order">
+<!ENTITY settings.useEndlessDisplay.label     "Use infinite feed item display (no paging)">
+<!ENTITY settings.feedItemOrder.newFirst     "Newest first">
+<!ENTITY settings.feedItemOrder.oldFirst     "Oldest first">
+<!ENTITY settings.groupByFeed.label  "Group by feed">
+<!ENTITY settings.removeBrokenFeedsButton.label "Remove Broken Feeds">
+<!ENTITY settings.resetButton.label "Reset to Defaults">
+<!ENTITY settings.feedItemSaveLimit.label "How many items to save per feed:">
+<!ENTITY settings.useFixedDisplayHeader.label "Pin the feed title to the top of the feed item display">
+
+<!ENTITY settings.timing.caption     "Feed Checking">
+<!ENTITY settings.stopChecking.label "Don't check feeds at all">
+<!ENTITY settings.checkIntervalActive.label "How often to check feeds when active">
+<!ENTITY settings.checkIntervalInactive.label "How often to check feeds when inactive">
+<!ENTITY settings.waitForResponse.label "How long to wait for a feed response">
+
+<!ENTITY settings.settingWindow.title     "Rsstler Settings">
+<!ENTITY settings.selectFolder.label      "Select Feed Folder">
+<!ENTITY settings.displayOptions.caption    "Display Options">
+<!ENTITY settings.feedTreeDisplay.caption    "Feeds Tree">
+<!ENTITY settings.showUpdateStatus.label      "Show update status">
+<!ENTITY settings.hideEmptyFeeds.label      "Hide empty feeds">
+<!ENTITY settings.hideReadFeeds.label      "Hide read feeds">
+<!ENTITY settings.pageLimit.label      "Number of feed items per page">
+<!ENTITY settings.feedItemDisplay.caption    "Feed Display">
+<!ENTITY settings.enableUserCss.label      "Use custom style sheet">
+<!ENTITY settings.browseCss.label      "Browse...">
+<!ENTITY settings.allowEContent.label      "Allow HTML tags">
+<!ENTITY settings.useNewWindows.label      "Open links in new windows (tabs)">
+<!ENTITY settings.fsNavigation.caption    "Feed Item Navigation">
+<!ENTITY settings.fsNavNext.label      "Next item: ">
+<!ENTITY settings.fsNavNext.commandkey    "j">
+<!ENTITY settings.fsNavPrev.label      "Previous item:">
+<!ENTITY settings.fsNavPrev.commandKey    "k">
+<!ENTITY settings.fsNavNextPage.label      "Next page: ">
+<!ENTITY settings.fsNavNextPage.commandkey    "n">
+<!ENTITY settings.fsNavMark.label      "Mark item read: ">
+<!ENTITY settings.fsNavMark.commandkey    "m">
+<!ENTITY settings.fsNavUnmark.label      "Unmark item read:">
+<!ENTITY settings.fsNavUnmark.commandKey    "u">
+<!ENTITY settings.fsOpenItem.label      "Open item in tab:">
+<!ENTITY settings.fsOpenItem.commandKey    "o">
+<!ENTITY settings.fsNavOptions.caption    "Navigation Options">
+<!ENTITY settings.navNextFeed.label      "At end of feed, 'Next item' goes to next feed">
+<!ENTITY settings.markingOpts.caption    "Marking Items Read">
+<!ENTITY settings.markingOpts.autoRead.label    "Mark items as read when displayed">
+<!ENTITY settings.markingOpts.autoReadTimer.label    "Time (seconds) to wait before marking as read">
+<!ENTITY settings.markingOpts.useRemoteLastRead.label    "Catch up based on last article read on other computers">
+<!ENTITY settings.markingOpts.alwaysKeepLocal.label    "Always keep saved items unread">
+<!-- OPML -->
+<!ENTITY settings.importInstructions.caption "To import feeds, select an OPML file below and then click Import OPML.">
+<!ENTITY settings.exportInstructions.caption "To export your feeds, select an OPML file below and then click Export OPML.">
+<!ENTITY settings.importButton.label      "Import OPML">
+<!ENTITY settings.exportButton.label      "Export OPML">
+<!ENTITY settings.browseButton.label      "Browse">
+
+
+<!ENTITY openRsstler.commandkey    "R">
+<!ENTITY openRsstler.modifiersKey    "shift control meta any alt">
+<!ENTITY openRsstlerInTab.commandkey    "R">
+<!ENTITY openRsstlerInTab.modifiersKey    "alt shift">
+
+<!-- Read State -->
+<!ENTITY markAsRead.command.label      "Mark as Read">
+<!ENTITY markAsRead.command.tooltip      "Mark as Read">
+<!ENTITY markAsRead.command.accesskey    "R">
+
+<!ENTITY markAsUnread.command.label      "Mark as Unread">
+<!ENTITY markAsUnread.command.tooltip    "Mark as Unread">
+<!ENTITY markAsUnread.command.accesskey    "U">
+
+<!ENTITY markAllAsRead.command.label    "Mark All as Read">
+<!ENTITY markAllAsRead.command.tooltip    "Mark All as Read">
+<!ENTITY markAllAsRead.command.accesskey  "A">
+<!ENTITY markAllAsRead.command.key      "C">
+<!ENTITY markAllAsRead.command.modifiers  "accel shift">
+
+<!ENTITY markAllAsUnread.command.label    "Mark All as Unread">
+<!ENTITY markAllAsUnread.command.tooltip  "Mark All as Unread">
+<!ENTITY markAllAsUnread.command.accesskey  "n">
+<!ENTITY toggleReadState.command.key    "M">
+
+

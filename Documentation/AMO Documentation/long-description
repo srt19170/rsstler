@@ -1,0 +1,14 @@
+Rsstler is an RSS reader with many features:
+<ul>
+<li>Provides the look and feel of Google Reader.</li>
+<li>Imports your feed lists from Google Reader and elsewhere.</li>
+<li>Scans your feeds for new items while you browse.</li>
+<li>Fully renders feed items, including HTML, video, etc.</li>
+<li>Saves unread feed items for later reading</li>
+<li>Synchronization of feed reading across different machines</li>
+<li>Customizable with CSS</li>
+<li>And much more...</li>
+</ul>
+
+Rsstler is a new effort and is being actively developed.  Please use
+the community features to report bugs and make feature requests! 

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://rsstler/skin/toolbar.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://rsstler/locale/rsstler.dtd">
+
+<overlay id="rsstlerOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript" src="chrome://rsstler/content/rsstlerUtils.js"/>
+  <script type="application/x-javascript" src="chrome://rsstler/content/rsstlerOverlay.js"/>
+
+  <keyset id="mainKeyset">
+    <key id="key_openRsstler" oncommand="rsstlerOverlay.openRsstler(event);"
+      key="&openRsstler.commandkey;"
+      modifiers="&openRsstler.modifiersKey;"/>
+  </keyset>
+ 
+  <toolbarpalette id="BrowserToolbarPalette">
+     <toolbarbutton id="rsstlerButton" 
+     label="&rsstler.label;" 
+     tooltiptext="&rsstler.tooltip;"
+     oncommand="rsstlerOverlay.openRsstler(event);"
+     onclick="checkForMiddleClick(this,event);" 
+     class="toolbarbutton-1 chromeclass-toolbar-additional"/>
+  </toolbarpalette>
+  
+  <popup id="contentAreaContextMenu">
+     <menuitem id="rsstlerDeleteFeed" 
+         hidden="true"
+         label="&rsstler.deleteFeed.label;"
+         insertbefore="context-back" 
+         oncommand="gContextMenu.target.ownerDocument.defaultView.rsstlerUI.cmDelete(gContextMenu.target);"/>
+     <menuitem id="rsstlerOpenInTab" 
+         hidden="true"
+         label="&rsstler.openInTab.label;"
+         insertafter="rsstlerDeleteFeed"
+         oncommand="gContextMenu.target.ownerDocument.defaultView.rsstlerUI.cmOpenInTab(gContextMenu.target);"/>
+     <menuseparator id="rsstlerSeparator"
+         hidden="true"
+         insertafter="rsstlerOpenInTab"/>
+  </popup>
+   
+</overlay>

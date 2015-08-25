@@ -1,0 +1,6 @@
+/* CSS for the Rsstler Toolbar button(s) */
+
+/* Default */
+toolbar[iconsize="small"] #rsstlerButton, toolbar #rsstlerButton, #rsstlerButton {
+  list-style-image: url("chrome://rsstler/skin/rsstler_16.png");
+}

@@ -1,0 +1,10 @@
+content   rsstler               chrome/content/
+skin      rsstler  classic/1.0  chrome/skin/classic/
+resource  rsstler               modules/
+
+locale    rsstler  en-US        chrome/locale/en-US/
+
+overlay  chrome://browser/content/browser.xul          chrome://rsstler/content/rsstlerOverlay.xul
+style    chrome://global/content/rsstlerOverlay.xul    chrome://rsstler/skin/toolbar.css
+style    chrome://global/content/customizeToolbar.xul    chrome://rsstler/skin/toolbar.css
+

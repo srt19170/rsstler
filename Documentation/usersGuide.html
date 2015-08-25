@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="AsciiDoc 8.6.8">
+<title>Rsstler User&#8217;s Guide</title>
+<link rel="stylesheet" href="./volnitsky.css" type="text/css">
+
+
+<script type="text/javascript" src="chrome://rsstler/content/asciidoc.js"></script>
+<script type="text/javascript" src="chrome://rsstler/content/volnitsky.js"></script>
+<script type="text/javascript">
+asciidoc.install(2);
+</script>
+</head>
+<body class="article">
+<div id="header">
+<h1>Rsstler User&#8217;s Guide</h1>
+<span id="author">Scott R. Turner</span><br>
+<span id="email" class="monospaced">&lt;<a href="mailto:srt19170@gmail.com">srt19170@gmail.com</a>&gt;</span><br>
+<span id="revdate">Version 1.0</span>
+<div id="toc">
+  <div id="toctitle">Table of Contents</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_introduction">Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Rsstler is a Mozilla Firefox extension for reading RSS feeds.  Rsstler
+was inspired by Google Reader, and should seem familiar to any Google Reader
+user.  Rsstler is also highly customizable, and can be configured to
+many different looks.</p></div>
+<div class="paragraph"><p>Unlike readers on web sites (like Google Reader and Feedly) that use banks
+of servers to gather and present your RSS feeds, Rsstler runs entirely
+within your browser.  This means you have the ultimate control over
+your reader, but there may be momentary pauses at times as Rsstler
+loads content, etc.</p></div>
+<div class="paragraph"><p>Rsstler is a new extension and still under development, so this
+documentation may not exactly match the current version of the
+extension.  Please help Rsstler improve by reporting any bugs you
+encounter at <a href="https://getsatisfaction.com/rsstler/">https://getsatisfaction.com/rsstler/</a>.  I&#8217;m also always
+interested in hearing ideas for new features!</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_to_get_help">How to Get Help</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>If Rsstler is broken or something has gone wrong, try clicking on the
+<em>Refresh</em> button <span class="image">
+<img src="chrome://rsstler/skin/reload.png" alt="(Circular arrow)">
+</span>
+in the header bar.  This tries to restart and refresh everything, and may fix your problem.</p></div>
+<div class="paragraph"><p>If you still need help, your first stop is this guide.  Read through
+it and see if it explains your problem. If not, the next stop is the
+Rsstler forums, which you can find at
+<a href="https://getsatisfaction.com/rsstler/">https://getsatisfaction.com/rsstler/</a>.  If all else fails, you can
+email me directly at <a href="mailto:srt19170@gmail.com">srt19170@gmail.com</a> with your question. But please
+do try the other resources first!</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_quick_start">Quick Start</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>You can open Rsstler by clicking on the Rsstler icon on the Add-Ons
+bar (usually at the bottom of your browser), or by typing Alt-R.
+These short cuts obey the standard modifiers.  On Windows, the
+modifiers are:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Ctrl or Middle-click: new tab, selected
+</p>
+</li>
+<li>
+<p>
+Shift: new window
+</p>
+</li>
+<li>
+<p>
+Ctrl+Shift: new tab, in background
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>You can also bookmark the Rsstler URL
+(chrome://rsstler/content/rsstler.html) and open it that way.</p></div>
+<div class="paragraph"><p>If Rsstler is already open, using the shortcuts will take you to the
+Rsstler tab rather than open a new reader.</p></div>
+<div class="sect2">
+<h3 id="_the_tour">The Tour</h3>
+<div class="imageblock" style="text-align:center;">
+<div class="content">
+<img src="screenshot1.png" alt="screenshot1.png">
+</div>
+<div class="title">Figure 1. Rsstler Overview</div>
+</div>
+<div class="paragraph"><p>There are three parts to the Rsstler interface.  Across the top is the
+<em>Header</em>, which contains buttons for controlling Rsstler.  In a column
+on the left side is the <em>Feeds Tree</em>, which shows all the subscribed
+feeds.  The rest of the screen is the <em>Feed Display</em>, where items from
+a feed are shown.</p></div>
+<div class="paragraph"><p>The first time you start Rsstler, it creates a folder called <em>Rsstler
+Feeds</em> in your bookmarks to store your RSS feeds.  It adds a couple of
+sample feeds to the folder just to get you started.  You can add new
+feeds a number of ways.  Rsstler has a <em>Subscribe</em> button&#8201;&#8212;&#8201;you can
+click on that and paste in the URL of a feed.  You can also click on a
+feed link and use Firefox&#8217;s <em>Bookmark This Link</em> to save it into the
+<em>Rsstler Feeds</em> folder in your bookmarks.  You can open an RSS
+feed in Firefox and use Firefox&#8217;s <em>Subscribe to Feed</em> feature to
+subscribe to the feed in Rsstler.  Finally, you can import a whole
+file of feeds using <em>Import OPML</em>.</p></div>
+<div class="paragraph"><p>However you collect your feeds, you manage your feeds the same way you
+manage your bookmarks.  Just open the <em>Show All Bookmarks</em> and arrange
+the Rsstler Feeds folder however you&#8217;d like.</p></div>
+<div class="imageblock" style="text-align:center;">
+<div class="content">
+<img src="screenshot2.png" alt="screenshot2.png">
+</div>
+<div class="title">Figure 2. Feeds Tree</div>
+</div>
+<div class="paragraph"><p>The <em>Feeds Tree</em> displays the list of your feeds.  By default, Rsstler
+only shows you the feeds that have unread items.  The number of unread
+items are shown in parentheses after the feed title.  If you display
+feeds without unread items, they&#8217;ll be shown in a regular (unbolded)
+font. If Rsstler thinks a feed is "broken" (usually because it can&#8217;t
+reach the feed) it will be displayed in red.</p></div>
+<div class="imageblock" style="text-align:center;">
+<div class="content">
+<img src="screenshot3.png" alt="screenshot3.png">
+</div>
+<div class="title">Figure 3. Feeds Folder in Feed Tree</div>
+</div>
+<div class="paragraph"><p>Just as you can have folders of bookmarks, you can have folders of
+feeds.  A triangle indicates a folder.  Clicking on the triangle will
+open or close the folder (showing or not showing the feeds inside the
+folder below the folder).  In the screenshot above, the folder is
+open.</p></div>
+<div class="paragraph"><p>If you click on a feed (or a folder) in the feed tree, the items in the
+feed (or the folder) will be displayed in the <em>Feed Display</em>.</p></div>
+<div class="imageblock" style="text-align:center;">
+<div class="content">
+<img src="screenshot4.png" alt="screenshot4.png">
+</div>
+<div class="title">Figure 4. Feed Display</div>
+</div>
+<div class="paragraph"><p>You can now scroll through the items in the <em>Feed Display</em>.  If you
+click on the title of one of the items, it will be opened in a
+separate tab (or window).  As you scroll down through the items,
+Rsstler will add more items at the end until there are no more items
+left to display.</p></div>
+<div class="paragraph"><p>You can also navigate through the <em>Feed Display</em> using the keyboard.
+The <em>j</em> key will move you ahead one item; the <em>k</em> key will move you
+back one item.  If you&#8217;re on <em>Click for more results</em>, the <em>j</em> key
+will load the next page of items.  The <em>n</em> key will load the next page
+of items no matter where you are.</p></div>
+<div class="paragraph"><p>If you right click on a feed or a folder in the <em>Feeds Tree</em>, the
+usual Firefox context menu will include items to delete the
+feed/folder, and to open the feed&#8217;s website in a new tab.</p></div>
+<div class="paragraph"><p>Across the top of the page in the <em>Header</em> are some controls.</p></div>
+<div class="imageblock" style="text-align:center;">
+<div class="content">
+<img src="screenshot6.png" alt="screenshot6.png">
+</div>
+<div class="title">Figure 5. Header overview</div>
+</div>
+<div class="paragraph"><p>From left to right, the controls are:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<strong>Subscription</strong>&#8201;&#8212;&#8201;This button will bring up a dialog where
+  you can paste in the URL of an RSS feed and add it to Rsstler.
+</p>
+</li>
+<li>
+<p>
+<strong>Refresh</strong> <span class="image">
+<img src="chrome://rsstler/skin/reload.png" alt="(Circular arrow)">
+</span>&#8201;&#8212;&#8201;This button will reload the feed in the <em>Feed Display</em>
+  and will also cause Rsstler to start checking all the feeds for new
+  items.
+</p>
+</li>
+<li>
+<p>
+<strong>Mark all as read</strong>&#8201;&#8212;&#8201;This button will mark all the items (not just
+  the ones in the <em>Feed Display</em>) in the current feed as read.
+</p>
+</li>
+<li>
+<p>
+<strong>Showing Unread</strong>&#8201;&#8212;&#8201;This button toggles the <em>Feed Display</em> between
+  showing just the unread items in the feed and showing all the items
+  in the feed (i.e., showing items you&#8217;ve already read).
+</p>
+</li>
+<li>
+<p>
+<strong>Full or List view</strong>
+  <span class="image">
+<img src="chrome://rsstler/skin/viewAsDetails3.png" alt="(Graphic of a list)">
+</span>&#8201;&#8212;&#8201;This button toggles the
+  <em>Feed Display</em> between showing full items or just the titles.
+</p>
+</li>
+<li>
+<p>
+<strong>Settings</strong> <span class="image">
+<img src="chrome://rsstler/skin/gear2.png" alt="(Gear)">
+</span>&#8201;&#8212;&#8201;This button brings up a dialog you can use to
+  change the Rsstler settings.
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect2">
+<h3 id="_marking_feed_items_as_read">Marking Feed Items As Read</h3>
+<div class="paragraph"><p>Rsstler normally marks feed items read as they are displayed in the
+<em>Feed Display</em>.  As you move through the feed items, they&#8217;ll be marked
+read one by one as they are displayed.  However, Rsstler won&#8217;t mark
+anything until you&#8217;ve done something in the <em>Feed Display</em>, such as
+scrolling the display, or using a keyboard command.  So if you display
+a feed and then display another feed without doing anything else
+in-between, the first feed won&#8217;t get marked as read.</p></div>
+<div class="paragraph"><p>You can turn off the "mark as read when displayed" behavior in the
+<em>Settings</em>.</p></div>
+<div class="paragraph"><p>You can also mark an item as read using the <em>m</em> key, and mark it as
+unread by using the <em>u</em> key.  You can mark everything in a feed as
+read by using the <strong>Mark all as read</strong> button.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_quitting_rsstler">Quitting Rsstler</h3>
+<div class="paragraph"><p>You quit Rsstler by closing the Rsstler tab or navigating away to
+another page.</p></div>
+<div class="paragraph"><p>When you quit Rsstler, it saves information about what you&#8217;ve read,
+what items are left, and so on.  For boring technical reasons, Rsstler
+cannot do this reliably when you quit the browser.  So it&#8217;s best if
+you close the Rsstler tab a few seconds before you quit the browser.
+This gives Rsstler time to save your information.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_migrating_feeds_from_another_reader">Migrating Feeds from Another Reader</h3>
+<div class="paragraph"><p>To migrate your feeds from another reader, export your feed list from
+that reader in OPML format. (In Google Reader, this is the
+Import/Export tab in Reader Settings.)  Save the OPML file to your
+local computer, and then use the <em>Import OPML</em> tab in the Rsstler
+<em>Settings</em> dialog to import the feeds.  CAUTION: This can be a lengthy
+process and will freeze your browser while it completes.  If you get a
+warning about a non-responsive script, allow the script to continue or
+the import will not complete.</p></div>
+<div class="paragraph"><p>That&#8217;s most of what you need to know to use Rsstler.  Keep reading if
+you want a few more details and an explanation of the <em>Settings</em>.</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_scanning_feeds">Scanning Feeds</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Any time the browser is running, Rsstler is scanning your feeds looking
+for new feed items.  By default, it does this every 3 minutes while
+you have Rsstler open, and every 15 minutes if you do not.</p></div>
+<div class="paragraph"><p>Rsstler uses a number of techniques to scan feeds efficiently, so you
+will not normally notice this activity.  You can use the <em>Settings</em>
+dialog to change the scanning intervals or stop scanning altogether.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_synchronization_a_id_synch_a">Synchronization <a id="synch"></a></h2>
+<div class="sectionbody">
+<div class="paragraph"><p>This section applies to people who read news on more than one computer
+and would like to keep Rsstler in synch across those different
+computers.  Here&#8217;s what you should do to achieve that:</p></div>
+<div class="paragraph"><p>First, use Firefox Synch to synchronize your bookmarks.  Since
+Rsstler&#8217;s feed list is saved as a folder of bookmarks, this means your
+feed list will get synchronized as well.</p></div>
+<div class="paragraph"><p>Second, Rsstler will save the last item you read in each feed on
+the feed&#8217;s bookmark&#8201;&#8212;&#8201;where it will get synchronized by Firefox
+Synch to your other computers.  This allows Rsstler on any of your
+computers to know the last item you read in each feed&#8201;&#8212;&#8201;regardless of
+which computer you were using at the time.  Rsstler will then use that
+information to mark anything older in that feed as already read.</p></div>
+<div class="paragraph"><p>There are a couple of caveats about this synchronization.</p></div>
+<div class="paragraph"><p>First, Rsstler can only remember the time of the <em>latest</em> item you&#8217;ve
+read.  So if you read the first few items in a feed but leave older
+items unread, the next time you use Rsstler it will think you&#8217;ve read
+all of them.</p></div>
+<div class="paragraph"><p>Second, Firefox Synch normally happens at idle moments in the browser.
+Rsstler tries to force a synchronization when it first starts up, and
+whenever you close the Rsstler tab, but this may fail.  If you happen
+to open Rsstler before Firefox Synch updates the bookmarks, Rsstler
+won&#8217;t have the latest timestamps and won&#8217;t realize you&#8217;ve already read
+the feeds.  When Firefox Synch updates the bookmark, Rsstler will
+"catch up" but until that happens it might show some items as unread
+that you have already seen.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_saved_feed_items_a_id_saved_a">Saved Feed Items <a id="saved"></a></h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Every time Rsstler finishes scanning feeds, it saves all the <em>unread</em>
+feed items in a database on your computer.  The next time you start
+Rsstler, it will add these unread items to your feeds.  (You&#8217;ll see
+that some of your feeds have items as soon as you open Rsstler, even
+before it has started scanning.)  Even if the unread item disappears
+from a feed, it will still be available to read in Rsstler.</p></div>
+<div class="paragraph"><p>Of course, if you have a lot of feeds and don&#8217;t stay caught up on
+them, Rsstler could end up saving a lot of unread feed items.  By
+default, Rsstler saves a maximum of 100 unread items per feed.  You
+can change this in <em>Settings</em>.</p></div>
+<div class="paragraph"><p>In Private Browsing mode, Rsstler does not save anything to the
+database.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img src="./warning.png" alt="Warning">
+</td>
+<td class="content">Unfortunately, a bug in Firefox causes the database save to
+be aborted if you close the browser while Rsstler is writing out the
+database.  Rsstler mostly avoids this problem, but it does mean that
+your saved data might be out-of-date the next time you open
+Rsstler.  If you&#8217;d like to see this bug fixed, visit
+<a href="http://bugzilla.mozilla.org/show_bug.cgi?id=870645">http://bugzilla.mozilla.org/show_bug.cgi?id=870645</a> and leave a
+comment for the Firefox developers.</td>
+</tr></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_settings">Settings</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>The <em>Settings</em> dialog provides options to change Rsstler.</p></div>
+<div class="imageblock" style="text-align:center;">
+<div class="content">
+<img src="screenshot7.png" alt="screenshot7.png">
+</div>
+</div>
+<div class="paragraph"><p>The dialog has six tabs. The sections below describe the options under
+each tab.</p></div>
+<div class="sect2">
+<h3 id="_general_tab">General Tab</h3>
+<div class="sect3">
+<h4 id="_select_feed_folder">Select Feed Folder</h4>
+<div class="paragraph"><p>Normally, Rsstler stores the feed bookmarks in a folder called
+"Rsstler Feeds".  Using the dropbox in this section, you can select
+any folder in your Bookmarks for Rsstler to use as its feeds.  After
+you switch to a new folder, feeds will be empty until the next
+refresh.</p></div>
+</div>
+<div class="sect3">
+<h4 id="_general">General</h4>
+<div class="ulist"><ul>
+<li>
+<p>
+<strong>Use custom style sheet</strong>&#8201;&#8212;&#8201;If this box is checked, the custom style
+  sheet selected in the file browse box below will be used to style
+  Rsstler.  (See <a href="#customize">Customize</a>.)
+</p>
+</li>
+<li>
+<p>
+<strong>How many items to save per feed</strong>&#8201;&#8212;&#8201;This indicates the number of
+   unread feed items per feed Rsstler will save to the local database
+   when it closes.
+</p>
+</li>
+<li>
+<p>
+<strong>Remove Broken Feeds</strong>&#8201;&#8212;&#8201;If Rsstler continually gets errors when it
+  tries to read a feed (usually indicating the feed has moved or no
+  longer exists), then it will mark the feed as "Broken".  (Broken
+  feeds are shown in red.  Since they&#8217;re usually empty, you&#8217;ll need to
+  turn on <strong>Show empty feeds</strong> to see them.)  This button will delete all
+  broken feeds from Rsstler.
+</p>
+</li>
+<li>
+<p>
+<strong>Reset to Defaults</strong>&#8201;&#8212;&#8201;This button will reset all Rsstler settings to
+  their default values.
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect3">
+<h4 id="_feed_checking">Feed Checking</h4>
+<div class="ulist"><ul>
+<li>
+<p>
+<strong>Don&#8217;t check feeds at all</strong>&#8201;&#8212;&#8201;When this box is checked, Rsstler will
+   not check feeds for new items.  This might be useful, for example,
+   if you were offline.
+</p>
+</li>
+<li>
+<p>
+<strong>How often to check feeds when active</strong>&#8201;&#8212;&#8201;This box indicates how many
+  seconds to wait between scanning the feeds for new items when
+  Rsstler is active (i.e., the Rsstler tab is open).
+</p>
+</li>
+<li>
+<p>
+<strong>How often to check feeds when inactive</strong>&#8201;&#8212;&#8201;This box indicates how many
+  seconds to wait between scanning the feeds for new items when
+  Rsstler is inactive (i.e., the Rsstler tab is not open).
+</p>
+</li>
+<li>
+<p>
+<strong>How long to wait for a feed response</strong>&#8201;&#8212;&#8201;This box indicates how many
+  seconds to wait for a response when scanning a feed.
+</p>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_display_options">Display Options</h3>
+<div class="sect3">
+<h4 id="_feed_tree">Feed Tree</h4>
+<div class="ulist"><ul>
+<li>
+<p>
+<strong>Show update status</strong>&#8201;&#8212;&#8201;If this box is checked, Rsstler will display
+  a box with the status of feed checking at the top of the <em>Feed
+  Tree</em>.
+</p>
+</li>
+<li>
+<p>
+<strong>Hide empty feeds</strong>&#8201;&#8212;&#8201;If this box is checked, feeds which have no
+  items (read or unread) will not be shown in the <em>Feed Tree</em>.
+</p>
+</li>
+<li>
+<p>
+<strong>Hide read feeds</strong>&#8201;&#8212;&#8201;If this box is checked, feeds which have no
+  unread items will not be shown in the <em>Feed Tree</em>.
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect3">
+<h4 id="_feed_display">Feed Display</h4>
+<div class="ulist"><ul>
+<li>
+<p>
+<strong>Pin the feed title</strong>&#8201;&#8212;&#8201;If this box is checked, Rsstler will keep
+  the title of the feed at the top of the <em>Feed Display</em> as you scroll
+  through the displayed items.  Otherwise it will scroll with the
+  items.
+</p>
+</li>
+<li>
+<p>
+<strong>Feed item order</strong>&#8201;&#8212;&#8201;This controls the order in which feed items are
+  displayed in the <em>Feed Display</em>, either Newest First or Oldest
+  First.
+</p>
+</li>
+<li>
+<p>
+<strong>Group by feed</strong>&#8201;&#8212;&#8201;This box changes how feed items are shown when you
+  click on a folder of feeds.  Normally, all the feeds within the
+  folder are mixed together and shown in the Newest First or Oldest
+  First order.  If this box is checked, the feeds will not be mixed
+  together.  All the items from the first feed will be presented
+  first, then the items from the second feed, and so on.  (Items within
+  each feed will be sorted according to the Feed item order.)
+</p>
+</li>
+<li>
+<p>
+<strong>Use infinite feed item display</strong>&#8201;&#8212;&#8201;If this box is checked, Rsstler
+  will keep adding items to the bottom of the <em>Feed Display</em> as you
+  scroll downwards.  If this box is not checked, Rsstler will display
+  a page full of feed items (<strong>Number of feed items per page</strong>) and you
+  will have to click (or use <em>j</em>) to load the next page.
+</p>
+</li>
+<li>
+<p>
+<strong>Number of feed items per page</strong>&#8201;&#8212;&#8201;This box controls how many feed
+  items will be shown per page in the <em>Feed Display</em> if the "infinite"
+  display is not checked.
+</p>
+</li>
+<li>
+<p>
+<strong>Allow HTML tags</strong>&#8201;&#8212;&#8201;If this box is unchecked, then HTML will be
+  stripped from feed items before they are displayed.
+</p>
+</li>
+<li>
+<p>
+<strong>Open links in new window (tab)</strong>&#8201;&#8212;&#8201;If this box is checked, links in feed
+  items will be forced to open in a new window (tab).  (If this box is
+  not checked, some links will try to open in the small area in
+  which the item is displayed.)
+</p>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_feed_item_navigation">Feed Item Navigation</h3>
+<div class="sect3">
+<h4 id="_feed_item_navigation_2">Feed Item Navigation</h4>
+<div class="paragraph"><p>The controls in this section can be used to change the keys for
+keyboard navigation, for example, to use the left hand.</p></div>
+</div>
+<div class="sect3">
+<h4 id="_navigation_options">Navigation Options</h4>
+<div class="ulist"><ul>
+<li>
+<p>
+<strong>At end of feed, <em>Next item</em> goes to next feed</strong>&#8201;&#8212;&#8201;If this option is
+   checked, hitting the <em>Next item</em> key (default: <em>j</em>) at the end
+   of a feed moves on to the next feed with unread items.  Otherwise
+   <em>Next item</em> does nothing.
+</p>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_marking_items_read">Marking Items Read</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+<strong>Marking items as read when displayed</strong>&#8201;&#8212;&#8201;When this box is checked,
+  Rsstler marks a feed item as read when it is displayed in the <em>Feed
+  Display</em>.  If this is unchecked, the user must manually mark items
+  as read using the <em>m</em> key and/or the <em>Mark all as read</em> button.
+</p>
+</li>
+<li>
+<p>
+<strong>Catch up based on last article read on other computers</strong>&#8201;&#8212;&#8201;If you
+   uncheck this box, Rsstler won&#8217;t try to synchronize this computer
+   with any other computers you use to read news. (See <a href="#synch    Synchronization">[synch    Synchronization]</a> for an explantion.)
+</p>
+</li>
+<li>
+<p>
+<strong>Always keep saved items unread</strong>&#8201;&#8212;&#8201;If this box is checked, Rsstler
+  won&#8217;t mark any saved feed items (see <a href="#saved Saved Feed Items">[saved Saved Feed Items]</a> as
+  read until you&#8217;ve actually seen them on this computer.  So if you
+  check this, you can be sure you won&#8217;t miss any saved items, but you
+  may end up seeing items again that you&#8217;ve already read on a
+  different computer.
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect2">
+<h3 id="_import_opml">Import OPML</h3>
+<div class="paragraph"><p>This form is used to import a list of feeds in OPML format.  Use the
+<em>Browse</em> button to find the OPML file and then click on the <em>Import
+OPML</em> button.  It can take a considerable amount of time to import a
+large OPML file, during which the browser will be "frozen."  If you
+receive an error message about a non-responsive script during this
+time, allow the script to continue or the import will fail.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_export_opml">Export OPML</h3>
+<div class="paragraph"><p>This form is used to export the Rsstler feeds to an OPML file for
+import into another reader.  Select the export file using the <em>Browse</em>
+button and then click the <em>Export OPML</em> button.  Again, this may be a
+lengthy process.</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_custom_style_sheets_a_id_customize_a">Custom Style Sheets <a id="customize"></a></h2>
+<div class="sectionbody">
+<div class="paragraph"><p>The look and feel of Rsstler is determined by a Cascading Style Sheet
+(CSS).  If you want to change something about how Rsstler looks (and
+to some extent, behaves), you can supply your own style sheet.</p></div>
+<div class="paragraph"><p>Explaining CSS is beyond the scope of this guide, but the easiest way
+to experiment is to start with the Rsstler style sheet.  You can find
+this style sheet at chrome://rsstler/skin/rsstler.css.  An example
+alternate style sheet is also provided at
+chrome://rsstler/skin/rsstler3d.css.  (You must copy this to your local
+hard drive before using it as a custom style sheet.)</p></div>
+<div class="paragraph"><p>You can specify your custom stylesheet in the <em>Settings</em> dialog on the
+<em>General</em> tab.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_credits_amp_license">Credits &amp; License</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>The Rsstler source code, documentation and logo were created by
+Scott R. Turner.  All source code, documentation and logos are
+Copyright 2013 &#169; to Scott R. Turner and subject to the terms of the
+Mozilla Public License, v. 2.0. If a copy of the MPL was not
+distributed with this file, you can obtain one at
+<a href="http://mozilla.org/MPL/2.0/">http://mozilla.org/MPL/2.0/</a>.</p></div>
+<div class="paragraph"><p>Two Javascript functions ("prettyDate" and "Array.remove") used in
+Rsstler were originally written by John Resig, and are used in
+modified form under the MIT License.</p></div>
+<div class="paragraph"><p>Portions of the Rsstler source code are based upon the source code for
+Sage, which was developed by Erik Arvidsson, Peter Andrews, Erwan
+Loisant, and others.  The Sage source code is licensed under the
+Mozilla Public License v. 1.1.  More information about Sage can be
+found at the <a href="http://sagerss.com">http://sagerss.com</a>.</p></div>
+<div class="paragraph"><p>Button graphics were designed by Scott R. Turner from freely available
+sources.</p></div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr></div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2015-08-12 11:15:36 Eastern Daylight Time
+</div>
+</div>
+</body>
+</html>

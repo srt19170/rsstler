@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xul-overlay href="chrome://browser/content/places/placesOverlay.xul"?>
+
+<!DOCTYPE dialog SYSTEM "chrome://rsstler/locale/rsstler.dtd">
+
+<dialog id="winMain" title="&settings.settingWindow.title;"
+	style="min-width:400px;" onload="init();initOPML();" ondialogaccept="accept();"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+	<script type="application/x-javascript" src="chrome://rsstler/content/rsstlerUtils.js" />
+	<script type="application/x-javascript" src="chrome://rsstler/content/settings/settings.js" />
+	<script type="application/x-javascript" src="chrome://rsstler/content/settings/opml.js" />
+
+	<stringbundleset>
+		<stringbundle id="strRes"
+			src="chrome://rsstler/locale/rsstler.properties" />
+	</stringbundleset>
+
+	<tabbox id="tablist">
+		<tabs>
+			<tab label="&settings.general.caption;" />
+			<tab label="&settings.displayOptions.caption;" />
+			<tab label="&settings.fsNavigation.caption;" />
+			<tab label="&settings.markingOpts.caption;" />
+			<tab label="&settings.importButton.label;" />
+			<tab label="&settings.exportButton.label;" />
+		</tabs>
+		<tabpanels>
+
+			<tabpanel>
+				<hbox>
+					<groupbox>
+						<caption label="&settings.selectFolder.label;" />
+						<menulist id="select-menu" oncommand="selectFolder(event);">
+							<menupopup id="select-folder">
+								<menuitem label=" " />
+							</menupopup>
+						</menulist>
+					</groupbox>
+					<groupbox>
+						<caption label="&settings.general.caption;" />
+						<vbox flex="1">
+							<checkbox id="chkUserCssEnable" label="&settings.enableUserCss.label;"
+								oncommand="setDisabled()" />
+							<hbox align="center">
+								<spacer width="30" />
+								<textbox id="txtUserCssPath" flex="1" />
+								<button id="btnBrowseCss" oncommand="browseCss()"
+									label="&settings.browseCss.label;" />
+							</hbox>
+						</vbox>
+						<label control="feedItemSaveLimit" value="&settings.feedItemSaveLimit.label;" />
+						<textbox id="feedItemSaveLimit" type="number"
+							label="&settings.feedItemSaveLimit.label;" />
+						<button label="&settings.removeBrokenFeedsButton.label;"
+							oncommand="removeBrokenFeeds();" />
+						<button label="&settings.resetButton.label;" oncommand="resetToDefaults();" />
+					</groupbox>
+					<groupbox>
+						<caption label="&settings.timing.caption;" />
+						<checkbox id="stopChecking" label="&settings.stopChecking.label;" />
+						<label control="checkIntervalActive" value="&settings.checkIntervalActive.label;" />
+						<textbox id="checkIntervalActive" type="number"
+							label="&settings.checkIntervalActive.label;" />
+						<label control="checkIntervalInactive" value="&settings.checkIntervalInactive.label;" />
+						<textbox id="checkIntervalInactive" type="number"
+							label="&settings.checkIntervalInactive.label;" />
+						<label control="waitForResponse" value="&settings.waitForResponse.label;" />
+						<textbox id="waitForResponse" type="number"
+							label="&settings.waitForResponse.label;" />
+					</groupbox>
+				</hbox>
+			</tabpanel>
+
+			<tabpanel>
+				<groupbox>
+					<caption label="&settings.feedTreeDisplay.caption;" />
+					<checkbox id="showUpdateStatus"  label="&settings.showUpdateStatus.label;" />
+					<checkbox id="chkHideEmptyFeeds" label="&settings.hideEmptyFeeds.label;" />
+					<checkbox id="chkHideReadFeeds" label="&settings.hideReadFeeds.label;" />
+				</groupbox>
+
+				<groupbox>
+					<caption label="&settings.feedItemDisplay.caption;" />
+					<checkbox id="useFixedDisplayHeader" label="&settings.useFixedDisplayHeader.label;" />
+					<label value="&settings.feedItemOrder.label;:" />
+					<menulist id="feedItemOrder">
+						<menupopup>
+							<menuitem label="&settings.feedItemOrder.newFirst;"
+								value="newestFirst" />
+							<menuitem label="&settings.feedItemOrder.oldFirst;"
+								value="oldestFirst" />
+						</menupopup>
+					</menulist>
+					<checkbox id="groupByFeed" label="&settings.groupByFeed.label;" />
+					<checkbox id="useEndlessDisplay" label="&settings.useEndlessDisplay.label;" 
+					          oncommand="setDisabled()"/>
+					<label control="pageLimit" value="&settings.pageLimit.label;" />
+					<textbox id="pageLimit" type="number" label="&settings.pageLimit.label;" />
+					<checkbox id="chkAllowEContent" label="&settings.allowEContent.label;" />
+					<checkbox id="chkUseNewWindows" label="&settings.useNewWindows.label;" />
+				</groupbox>
+			</tabpanel>
+
+			<tabpanel>
+				<groupbox>
+					<caption label="&settings.fsNavigation.caption;" />
+					<vbox flex="1">
+						<hbox>
+							<label value="&settings.fsNavNext.label;" />
+							<textbox id="fsNavNext" maxlength="1" size="1" />
+						</hbox>
+						<hbox>
+							<label value="&settings.fsNavPrev.label;" />
+							<textbox id="fsNavPrev" maxlength="1" size="1" />
+						</hbox>
+						<hbox>
+							<label value="&settings.fsNavNextPage.label;" />
+							<textbox id="fsNavNextPage" maxlength="1" size="1" />
+						</hbox>
+						<hbox>
+							<label value="&settings.fsNavMark.label;" />
+							<textbox id="fsNavMark" maxlength="1" size="1" />
+						</hbox>
+						<hbox>
+							<label value="&settings.fsNavUnmark.label;" />
+							<textbox id="fsNavUnmark" maxlength="1" size="1" />
+						</hbox>
+						<hbox>
+							<label value="&settings.fsOpenItem.label;" />
+							<textbox id="fsOpenItem" maxlength="1" size="1" />
+						</hbox>
+					</vbox>
+				</groupbox>
+				<groupbox>
+				    <caption label="&settings.fsNavOptions.caption;" />
+					<checkbox id="navNextFeed" label="&settings.navNextFeed.label;" />
+				</groupbox>
+			</tabpanel>
+
+			<tabpanel>
+				<groupbox>
+					<caption label="&settings.markingOpts.caption;" />
+					<vbox flex="1">
+						<checkbox id="chkAutoRead" label="&settings.markingOpts.autoRead.label;" />
+						<checkbox id="useRemoteLastRead" label="&settings.markingOpts.useRemoteLastRead.label;" />
+						<checkbox id="alwaysKeepLocal" label="&settings.markingOpts.alwaysKeepLocal.label;" />
+					</vbox>
+				</groupbox>
+			</tabpanel>
+
+			<tabpanel>
+				<vbox flex="1">
+					<caption label="&settings.importInstructions.caption;" />
+					<hbox>
+						<textbox flex="1" id="txtImportFile" />
+						<button flex="0" label="&settings.browseButton.label;"
+							oncommand="browseImportFile()" />
+						<button flex="0" label="&settings.importButton.label;"
+							oncommand="importOPML()" />
+						<spacer flex="1" />
+						<spacer flex="1" />
+					</hbox>
+					<spacer flex="1" />
+				</vbox>
+			</tabpanel>
+
+			<tabpanel>
+				<vbox flex="1">
+					<caption label="&settings.exportInstructions.caption;" />
+					<hbox>
+						<textbox flex="1" id="txtExportFile" />
+						<button label="&settings.browseButton.label;" oncommand="browseExportFile()" />
+						<button label="&settings.exportButton.label;" oncommand="exportOPML()" />
+						<spacer flex="1" />
+						<spacer flex="1" />
+					</hbox>
+				</vbox>
+			</tabpanel>
+
+		</tabpanels>
+	</tabbox>
+
+
+</dialog>
