@@ -6,7 +6,7 @@
   <Description about="urn:mozilla:install-manifest">
   
     <em:id>developer@rsstler.org</em:id>
-    <em:version>0.72</em:version>
+    <em:version>0.73</em:version>
     <em:type>2</em:type>
   
     <em:name>Rsstler</em:name>
