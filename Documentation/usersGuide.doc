@@ -21,7 +21,7 @@ loads content, etc.
 Rsstler is a new extension and still under development, so this
 documentation may not exactly match the current version of the
 extension.  Please help Rsstler improve by reporting any bugs you
-encounter at https://getsatisfaction.com/rsstler/.  I'm also always
+encounter at https://github.com/srt19170/rsstler/issues.  I'm also always
 interested in hearing ideas for new features!
 
 == How to Get Help
@@ -31,8 +31,7 @@ in the header bar.  This tries to restart and refresh everything, and may fix yo
 
 If you still need help, your first stop is this guide.  Read through
 it and see if it explains your problem. If not, the next stop is the
-Rsstler forums, which you can find at
-https://getsatisfaction.com/rsstler/.  If all else fails, you can
+Rsstler wiki, which you can find at https://github.com/srt19170/rsstler/wiki.  If all else fails, you can
 email me directly at srt19170@gmail.com with your question. But please
 do try the other resources first!
 
