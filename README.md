@@ -22,7 +22,9 @@ button in the upper right to open the User's Guide.
 
 * NoScript ClearClick sometimes interferes with Rsstler by
   "swallowing" mouse clicks that are intended for Rsstler.  If you
-  have this problem you may have to click again.
+  have this problem you can disable the NoScript ClearClick
+  functionality in that extension, or simply click again until the
+  mouse click gets through to Rsstler.
 
 * Nested folders in the Rsstler list of feeds don't display very well;
   they aren't indented as they probably should be.
